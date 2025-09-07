@@ -1,0 +1,13 @@
+.header {
+    position: sticky;
+    display: flex;
+    padding: 2rem;
+
+}
+
+.section ImgPost{
+}
+
+.footer {
+    margin-bottom: auto;
+}
