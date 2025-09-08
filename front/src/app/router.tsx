@@ -1,13 +1,13 @@
 import { Route, Routes } from "react-router-dom";
 import Home from "../comps/pages/Home";
-import Post from "../comps/Post";
+import Posts from "../comps/pages/Posts";
 
-export default function router() {
+export default function Router() {
   return (
     <div>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/posts" element={<Post/>}/>
+        <Route path="/posts" element={<Posts/>}/>
       </Routes>
     </div>
   );

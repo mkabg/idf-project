@@ -1,28 +1,34 @@
+import { useState } from "react";
 import { postDb } from "../../db/db";
+import LikesPost from "./LikesPost";
 
-// type Post = {
-//   img: string,
-//   description: string,
-//   likes: number,
-//   userName:string,
-//   date: string
-// }
+type Post = {
+  id: number
+  img: string,
+  description: string,
+  likes: number,
+  userName:string,
+  date: string
+}
 
+
+// to do 
+// fix load img
 export default function LoadPost() {
-  const posts = postDb;
+  const [posts, setPosts] = useState<Array<Post>>(postDb)
+
   return (
     <div>
       {posts.map((post) => (
-        <div>
-          <h3>
+        <div key={post.id}>
+          <div>
             {post.date}
-            {post.user}
-          </h3>
-          <img src={post.img} />
+            {post.userName}
+          </div>
+          <img src={post.img} alt="post img" />
           <p>{post.description}</p>
           <footer>
-            {post.date}
-            {post.likes}
+            <LikesPost/>
           </footer>
         </div>
       ))}

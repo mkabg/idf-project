@@ -1,19 +1,19 @@
-import { Link } from "react-router-dom";
-import Post from "./comps/post/Post";
-import Home from "./comps/pages/Home";
+import "./App.css";
+import Router from "./app/Router";
+import NavBar from "./comps/NavBar";
+import Header from "./comps/appliction-layout/Header";
 
 export default function App() {
   return (
     <div>
       <header>
-        {logo}
-        {slogen}
+        <Header />
+        <NavBar />
       </header>
+      <hr />
       <div>
-        
+        <Router />
       </div>
-      {/* <Post /> */}
-      <Home/>
     </div>
   );
 }

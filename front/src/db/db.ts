@@ -1,30 +1,34 @@
 export const postDb = [
   {
+    id: 1,
     img: "../../assets/img/logo.jpg",
     description: "first post",
     likes: 0,
-    user: "mordechai",
+    userName: "mordechai",
     date: "1.2.25 18:30",
   },
   {
+    id: 2,
     img: "../../assets/img/logo.jpg",
     description: "first post",
     likes: 0,
-    user: "mordechai",
+    userName: "mordechai",
     date: "1.2.25 18:30",
   },
   {
+    id: 3,
     img: "../../assets/img/logo.jpg",
     description: "first post",
     likes: 0,
-    user: "mordechai",
+    userName: "mordechai",
     date: "1.2.25 18:30",
   },
   {
+    id: 4,
     img: "../../assets/img/logo.jpg",
     description: "first post",
     likes: 0,
-    user: "mordechai",
+    userName: "mordechai",
     date: "1.2.25 18:30",
   },
 ];

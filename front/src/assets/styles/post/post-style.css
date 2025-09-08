@@ -1,0 +1,38 @@
+/* .post {
+  position: sticky;
+  width: 45%;
+  height: 330px;
+  border: 2px solid black;
+  border-collapse: 10px;
+  border-radius: 10px; 
+} */
+
+.post {
+  width: 40%;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid blueviolet;
+  padding: 5px;
+}
+
+.post:hover {
+    color: lightgray;
+}
+
+.img-post {
+  width: 50%;
+}
+
+.head-post {
+}
+
+/* .section ImgPost{
+    
+} */
+
+/* .footer {
+    margin-bottom: auto;
+} */

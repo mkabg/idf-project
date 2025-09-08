@@ -3,15 +3,15 @@ import DescriptionPost from "./DescriptionPost";
 import ImgPost from "./ImgPost";
 import LikesPost from "./LikesPost";
 import UserPost from "./UserPost";
-import "../../styles/post-style.css";
+import "../../assets/styles/post/post-style.css";
 
 export default function Post() {
   return (
-    <div>
-      <header className="header">
+    <div className="post">
+      <div className="head-post">
         <DatePost />
         <UserPost />
-      </header>
+      </div>
       <section className="body">
         <ImgPost />
         <DescriptionPost />

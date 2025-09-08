@@ -6,7 +6,7 @@ export default function ImgPost() {
 
   return (
     <div>
-      <img src={imgSrc} alt="post img" width={200} height={200}/>
+      <img className="img-post" src={imgSrc} alt="post img" />
     </div>
   );
 }
