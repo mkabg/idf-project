@@ -1,22 +1,39 @@
-// Include the fs module
 import fs from "fs";
-// Read the file synchronously
-const data = fs.readFileSync("../db/db.json", "utf-8");
+import { json } from "stream/consumers";
 
-// Display the file content
-console.log(data);
+const dataPath = "./DB/db.json";
 
-function readPost(post) {}
+export function readPosts() {
+  try {
+    const posts = fs.readFileSync(dataPath, "utf-8");
+    return JSON.parse(posts);
+  } catch (error) {
+    throw error;
+  }
+}
 
-function writePost(newPost) {}
+export async function writePost(newPost) {
+  try {
+    fs.writeFileSync(dataPath, "utf-8", posts, () => {});
+  } catch (error) {
+    throw error;
+  }
+}
 
+// export function getPostsDB() {
+//   return readPosts();
+// }
 
-export function getPostsDB() {}
+// export function getPostByIdDB(id) {
+//   const posts = readPosts();
+//   posts.forEach((post) => {
+//     if (post.id === id) return post;
+//     return "post not found";
+//   });
+// }
 
-export function getPostByIdDB() {}
+// export function createPostDB() {}
 
-export function createPostDB() {}
+// export function updatePostDB() {}
 
-export function updatePostDB() {}
-
-export function deletePostDB() {}
+// export function deletePostDB() {}
