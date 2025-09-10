@@ -1,32 +1,39 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { getPosts } from "../../services/api/posts";
 import LoadPost from "../post/LoadPost";
-
-export type Post = {
-  id: number;
-  img: string;
-  description: string;
-  likes: number;
-  userName: string;
-  date: string;
-};
+import type { PostType } from "../../types/PostType";
+import { postsSeed } from "../../data/db";
 
 export default function Home() {
-  const [posts, setPosts] = useState<Array<Post>>([]);
+  const [posts, setPosts] = useState<PostType[]>([]);
   const [loading, setLoading] = useState(true);
-  const [err, setErr] = useState(null);
+  const [err, setErr] = useState<string | null>(null);
 
+  // Try server first; on failure, fallback to local seed
   useEffect(() => {
+    let mounted = true;
     getPosts()
       .then((data) => {
-        setPosts(data);
+        if (!mounted) return;
+        setPosts(data as PostType[]);
       })
-      .catch((err) => {
-        setErr(err.message);
+      .catch(() => {
+        if (!mounted) return;
+        setPosts(postsSeed); // fallback for local dev
       })
       .finally(() => {
+        if (!mounted) return;
         setLoading(false);
       });
+    return () => {
+      mounted = false;
+    };
+  }, []);
+
+  const handleLike = useCallback((postId: number) => {
+    setPosts((prev) =>
+      prev.map((p) => (p.id === postId ? { ...p, likes: p.likes + 1 } : p))
+    );
   }, []);
 
   if (loading) return <div>Loading posts...</div>;
@@ -34,7 +41,7 @@ export default function Home() {
 
   return (
     <div>
-      <LoadPost posts={posts} />
+      <LoadPost posts={posts} onLike={handleLike} />
     </div>
   );
 }

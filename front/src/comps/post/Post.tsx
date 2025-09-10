@@ -1,9 +1,9 @@
+import "../../assets/styles/post/post-style.css";
 import DatePost from "./DatePost";
 import DescriptionPost from "./DescriptionPost";
 import ImgPost from "./ImgPost";
 import LikesPost from "./LikesPost";
 import UserPost from "./UserPost";
-import "../../assets/styles/post/post-style.css";
 
 export default function Post() {
   return (
@@ -17,7 +17,7 @@ export default function Post() {
         <DescriptionPost />
       </section>
       <footer className="footer">
-        <LikesPost />
+        {/* <LikesPost /> */}
       </footer>
     </div>
   );

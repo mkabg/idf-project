@@ -1,4 +1,6 @@
-export const postDb = [
+import type { Post } from "../types/PostType";
+
+export const postsSeed: Post[] = [
   {
     id: 1,
     img: "/logo.jpg",
