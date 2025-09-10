@@ -1,7 +1,7 @@
 export const postDb = [
   {
     id: 1,
-    img: "logo.jpg",
+    img: "./logo.jpg",
     description: "first post",
     likes: 0,
     userName: "mordechai",
@@ -9,7 +9,7 @@ export const postDb = [
   },
   {
     id: 2,
-    img: "logo.jpg",
+    img: "./logo.jpg",
     description: "first post",
     likes: 0,
     userName: "mordechai",
@@ -17,7 +17,7 @@ export const postDb = [
   },
   {
     id: 3,
-    img: "logo.jpg",
+    img: "./logo.jpg",
     description: "first post",
     likes: 0,
     userName: "mordechai",
@@ -25,7 +25,7 @@ export const postDb = [
   },
   {
     id: 4,
-    img: "logo.jpg",
+    img: "./logo.jpg",
     description: "first post",
     likes: 0,
     userName: "mordechai",
